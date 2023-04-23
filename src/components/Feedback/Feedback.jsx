@@ -2,7 +2,8 @@ import React from 'react';
 import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions.jsx';
 import { Statistics } from './Statistics/Statistics';
 import { NotificationMessage } from './NotificationMessage/NotificationMessage.jsx';
-import { FeedbackForm, FbTitle, StatTitle, FbWrapper } from './Feedback.styled.jsx';
+import { FeedbackForm, FbWrapper } from './Feedback.styled.jsx';
+import { Section } from 'components/Section/Section.jsx';
 
 export class Feedback extends React.Component {
   state = {
@@ -35,11 +36,11 @@ export class Feedback extends React.Component {
     return (
       <FeedbackForm>
         <FbWrapper>
-          <FbTitle>Please leave feedback</FbTitle>
+          <Section title='Please leave feedback' />
           <FeedbackOptions options={options} handleClick={this.handleClick} />
         </FbWrapper>
         <FbWrapper>
-        <StatTitle>Statistics</StatTitle>
+        <Section title="Statistics" />
         {!total ? (
           <NotificationMessage message="There is no feedback yet" />
         ) : (
