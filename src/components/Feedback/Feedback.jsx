@@ -37,7 +37,7 @@ export class Feedback extends React.Component {
       <FeedbackForm>
         <FbWrapper>
           <Section title='Please leave feedback' />
-          <FeedbackOptions options={options} handleClick={this.handleClick} />
+          <FeedbackOptions options={options} onLeaveFeedback={this.handleClick} />
         </FbWrapper>
         <FbWrapper>
         <Section title="Statistics" />
