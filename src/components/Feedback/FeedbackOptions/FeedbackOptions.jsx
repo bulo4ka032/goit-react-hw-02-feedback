@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { FbOptList, FbOptItem, FBOptBtn } from './FeedbackOptions.styled';
 
 export const FeedbackOptions = ({ options, handleClick }) => {
@@ -17,3 +18,8 @@ export const FeedbackOptions = ({ options, handleClick }) => {
       </FbOptList>
   );
 };
+
+FeedbackOptions.propTypes = {
+  options: PropTypes.arrayOf(PropTypes.string).isRequired,
+  handleClick: PropTypes.func.isRequired,
+}
