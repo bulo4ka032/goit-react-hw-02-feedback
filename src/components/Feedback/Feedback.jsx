@@ -19,7 +19,8 @@ export class Feedback extends React.Component {
   };
 
   countTotalFeedback = () => {
-    return this.state.good + this.state.neutral + this.state.bad;
+    const votes = Object.values(this.state);
+    return votes.reduce((acc, vote) => acc + vote, 0);
   };
 
   countPositiveFeedbackPercentage = () => {
@@ -36,25 +37,27 @@ export class Feedback extends React.Component {
     return (
       <FeedbackForm>
         <FbWrapper>
-          <Section title='Please leave feedback' />
-          <FeedbackOptions options={options} onLeaveFeedback={this.handleClick} />
+          <Section title="Please leave feedback" />
+          <FeedbackOptions
+            options={options}
+            onLeaveFeedback={this.handleClick}
+          />
         </FbWrapper>
         <FbWrapper>
-        <Section title="Statistics" />
-        {!total ? (
-          <NotificationMessage message="There is no feedback yet" />
-        ) : (
-          <Statistics
-            good={good}
-            neutral={neutral}
-            bad={bad}
-            total={total}
-            positivePercentage={positivePercentage}
-          />
-        )}</FbWrapper>
+          <Section title="Statistics" />
+          {!total ? (
+            <NotificationMessage message="There is no feedback yet" />
+          ) : (
+            <Statistics
+              good={good}
+              neutral={neutral}
+              bad={bad}
+              total={total}
+              positivePercentage={positivePercentage}
+            />
+          )}
+        </FbWrapper>
       </FeedbackForm>
     );
   }
 }
-
-
