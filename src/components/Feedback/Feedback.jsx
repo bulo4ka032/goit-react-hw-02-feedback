@@ -1,7 +1,7 @@
 import React from 'react';
-import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions.jsx';
-import { Statistics } from './Statistics/Statistics';
-import { NotificationMessage } from './NotificationMessage/NotificationMessage.jsx';
+import { FeedbackOptions } from '../FeedbackOptions/FeedbackOptions.jsx';
+import { Statistics } from '../Statistics/Statistics';
+import { NotificationMessage } from '../NotificationMessage/NotificationMessage.jsx';
 import { FeedbackForm, FbWrapper } from './Feedback.styled.jsx';
 import { Section } from 'components/Section/Section.jsx';
 
